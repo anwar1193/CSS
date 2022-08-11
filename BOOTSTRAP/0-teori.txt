@@ -1,0 +1,681 @@
+1. Pengenalan dan Cara Menggunakan Bootstrap (v 4.2)
+
+* Secara default, started template bootstrap 4.2 terhubung dengan file bootstrap secara online
+
+* jika ingin offline, download dulu file bootstrap nya lalu berikut adalah file2 bootstrap yang harus dihubungkan ke project kita :
+	1. CSS -> bootstrap.min.css
+	2. Javascript -> 
+		- jquery.js (tambah sendiri)
+		- bootstrap.min.js
+
+-------------------------------------------------------------------------------------
+
+2. Membuat Menu Bar (Navbar)
+
+* Langkah : 
+
+	1. di bootstrap, klik menu documentation
+
+	2. klik components->navbar (atau search navbar)
+
+	3. keterangan baris code : <nav class="navbar navbar-expand-lg navbar-light bg-light">
+		* navbar-light : warna tulisan
+		* bg-light : warna background
+
+	4. Membuat posisi navbar static di atas halaman
+		* fixed-top (membuat navbar static di atas), contoh penggunaan :
+			<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+
+	5. Membuat tulisan navbar tidak terlalu mepet (ada indent)
+		* tambahkan class container tepat setelah 
+			<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+
+	6. Membuat tulisan menu ada di kanan
+		* tambahkan class 'ml-auto' di <ul class="navbar-nav">
+		* menjadi <ul class="navbar-nav ml-auto">
+
+	7. Menambahkan menu dropdown
+		* copy dari bagian menu yang ada dropdown nya, sbb :
+		      <li class="nav-item dropdown">
+		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Dropdown
+		        </a>
+		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+		          <a class="dropdown-item" href="#">Action</a>
+		          <a class="dropdown-item" href="#">Another action</a>
+		          <div class="dropdown-divider"></div>
+		          <a class="dropdown-item" href="#">Something else here</a>
+		        </div>
+		      </li>
+
+* Dokumentasi warna bootstrap :
+	1. di pencarian ketik background color
+	2. Enter
+
+-------------------------------------------------------------------------------------
+
+3. Membuat Jumbotron
+
+* Jumbotron : untuk menampilkan informasi utama pada sebuah website
+
+* Langkah :
+	1. Buat Navbar seperti di Materi 2
+
+	2. Di search, ketik jumbotron -> enter
+
+	3. Pilih yang ada botton nya, copy kan ke project kita
+
+	4. Desain jumbotron Dengan Style kita sendiri :
+		- Buat file css (style/styleJumbotron.css) lalu panggil
+		- Sejajarkan tulisan jumbotron dengan tulisan navbar dengan cara :
+			tambahkan class 'container' tepat di bawah <div class="jumbotron">
+
+	5. yang dilakukan di css kita sendiri : (script ada di styleJumbotron.css)
+		- ganti background jumbotron dengan gambar
+		- ubah ukuran background, dengan background-size : cover (supaya gambar penuh)
+		- tambah tinggi jumbotron, height: 770px;
+		- buat tulisan ke tengah semua, text-align : center;
+		- ubah warna tulisan dengan warna yang sesuai
+		- gabungkan jumbotron dan navbar
+			1. naikkan posisi jumbotron ke atas, margin-top: -120px (di jumbotron)
+			2. buat navbar menjadi transparan, caranya :
+				ganti bg-light jadi bg-transparent di : <nav class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top">
+			3. Ubah warna text navbar jadi sesuai dengan background, caranya :
+				tambahkan class (di tiap2 tulisan):
+					* text-white (untuk ubah warna tulisan jadi putih)
+					* font-weight-bold (untuk menebalkan tulisan)
+					* lead (percantik tulisan lebih tipis)
+			4. geser tulisan jumbotron ke bawah, margin-top:200px (di jumbotron class display-4)
+			5. Ubah style default garis <hr> jumbotron
+				- warna -> border-color: salmon;0px
+				- panjang garis -> width: 70px;
+				- lebar garis -> width: 3px;
+			6. Ubah style default tombol <btn> jumbotron
+				- warna -> background-color: salmon;
+				- hilangkan border tombol -> border: none;
+				- tambahkan style lain sesuai selera
+
+-------------------------------------------------------------------------------------
+
+4. Membuat Carousel / Slider
+
+* Langkah :
+	1. Buat Navbar (Seperti Materi 2)
+
+	2. Buat navbar menjadi transparan, caranya :
+		ganti bg-light jadi bg-transparent di : <nav class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top">
+
+	3. Di Search Bootstrap, ketik carousel -> enter -> pilih yang with indicator
+		copy ke bawah navbar
+
+	4. Tambahkan gambar di tiap2 carousel
+
+	5. Ubah warna text navbar jadi sesuai dengan background, caranya :
+		tambahkan class (di tiap2 tulisan):
+			* text-white (untuk ubah warna tulisan jadi putih)
+			* font-weight-bold (untuk menebalkan tulisan)
+			* lead (percantik tulisan lebih tipis)
+
+	6. Buat file css kita sendiri
+
+	7. Di File CSS kita sendiri
+		* mengatur tinggi gambar slider (.carousel-item) -> height : 670px;
+		* naikkan gambar carousel (.carousel-item img) -> margin-top: -80px;
+
+	8. Tambahkan Caption(tulisan) di slider, caranya
+		* ambil dari carousel - with caption
+		* copy kan script :
+			<div class="carousel-caption d-none d-md-block">
+			    <h5>...</h5>
+			    <p>...</p>
+			  </div>
+		* Letakkan di bawah gambar (img)
+		* ganti isi tulisannya (h5 dan p) dengan tulisan di jumbotron pada materi sebelumnya (mulai dari h1 sampai a)
+
+	9. Di File CSS kita sendiri
+		* naikkan tulisannya (.carousel-item .display-4) -> margin-top : -440px;
+		* Ubah style default garis <hr> carousel
+			- warna -> border-color: salmon;0px
+			- panjang garis -> width: 70px;
+			- lebar garis -> width: 3px;
+		* Ubah style default tombol <btn> carousel
+			- warna -> background-color: salmon;
+			- hilangkan border tombol -> border: none;
+			- tambahkan style lain sesuai selera
+
+-------------------------------------------------------------------------------------
+
+5. Menggunakan Font Awesome (Icon)
+
+* Font Awesome bisa digunakan secara online dan offline
+
+* url : fontawesome.com
+
+* cara online : (kasus ini kita pakai pada project carousel)
+	1. klik menu start
+	2. masukkan alamat email -> lalu konfirmasi email -> password (untuk bikin akun)
+	3. email : anwarahmad391@gmail.com , pass : siryu007
+	4. copy kan script src yang tampil setelah login (di antara head)
+		<script src="https://kit.fontawesome.com/b2cbc3a1b5.js" crossorigin="anonymous"></script>
+	5. Cara memanggil icon :
+		- di font awesome, klik menu icon
+		- klik icon yang diinginkan (bisa juga search)
+		- lalu klik pada <i class="fab fa-namaIcon"></i> untuk copy sintaks
+		- paste ke tempat dicon diinginkan, contoh :
+			<i class="fab fa-youtube"></i>
+		- berikan style bawaan bootstrap pada icon, contoh :
+			<i class="fab fa-youtube text-white ml-3 mt-2"></i>
+			* Keterangan :
+				- text-white = warna icon putih (bisa juga dari css custom 'color')
+				- ml-3 = margin-left : 3px;
+				- mt-2 = margin-top : 2px
+				- untuk mengubah ukuran icon tambahkan -> fa-2x / fa-3x / dst
+					contoh :
+					<i class="fa-2x fab fa-youtube text-white ml-3 mt-2"></i>
+
+* Cara Offline :
+	1. klik download (ada di bawah)
+	2. pilih "free for web" -> akan langsung download
+	3. extract hasil download -> copy ke folder project kita
+	4. panggil css font awesome nya (all.min.css)
+	5. cara memanggil icon sama seperti cara online
+
+
+-------------------------------------------------------------------------------------
+
+6. Grid System
+
+* Grid System : untuk membuat layout/tata letak sebuah website
+
+* Dengan menggunakan grid system, website menjadi lebih responsif
+ 
+* Jumlah total kolom ada 12, jika kita membuat lebih dari 12, maka akan turun ke bawah
+
+* Class2 pada grid system bootstrap :
+	.col-12 (Extra Small / <576px) -> ukuran handphone
+	.col-sm-12 (Small / >= 576px) -> ukuran tablet
+	.col-md-12 (Medium / >= 768px) -> ukuran laptop
+	.col-lg-12 (Large / >= 992px) -> ukuran PC (CPU)
+	.col-xl-12 (Extra Large / >= 1200px) -> ukuran monitor besar
+
+* Contoh Penggunaan
+	<div class="col-md-4 col-sm-6 bg-danger"></div>
+	<div class="col-md-4 col-sm-6 bg-primary"></div>
+	<div class="col-md-4 col-sm-6 bg-success"></div>
+	<div class="col-md-4 col-sm-6 bg-info"></div>
+	<div class="col-md-4 col-sm-6 bg-warning"></div>
+	<div class="col-md-4 col-sm-6 bg-light"></div>
+
+* pada contoh diatas, jika di buka di laptop maka akan jadi 3 kolom (4,4,4) dan jika di buka di tablet akan jadi 2 kolom (6,6)
+
+-------------------------------------------------------------------------------------
+
+7. Membuat Message Alert
+
+* di pencarian bootstrap, ketik alert->enter
+
+* Script Alert Standar :
+	<div class="alert alert-primary" role="alert">
+	  Alert Standar Warna Primary
+	</div>
+
+* Script Alert Dengan Tombol Close :
+	<div class="alert alert-warning alert-dismissible fade show" role="alert">
+	  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+	  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	    <span aria-hidden="true">&times;</span>
+	  </button>
+	</div>
+
+* Script Alert Panjang, 2 paragraf :
+	<div class="alert alert-success" role="alert">
+	  <h4 class="alert-heading">Well done!</h4>
+	  <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+	  <hr>
+	  <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+	</div>
+
+* Warna2 pada alert :
+	- primary
+	- secondary
+	- success
+	- danger
+	- warning
+	- info
+	- light
+	- dark
+
+-------------------------------------------------------------------------------------
+
+8. Membuat Form 
+
+* Di dokumentasi bootstrap, ketik forms -> enter
+
+-------------------------------------------------------------------------------------
+
+9. Membuat Form login
+
+* Langkah2 :
+	1. Buat container, dan di dalam container :
+
+	2. Buat Judul (h4) , taro di tengah (text-center)
+
+	3. Buat <hr> di bawah judul
+
+	4. Buat tag form -> di dalamnya inputan username, password dan button
+
+	5. Di CSS Kita Sendiri :
+		* modifikasi .container
+			- kecilkan lebarnya (width: 30%)
+			- turunkan form login nya (margin-top: 100px)
+			- kasih border di form login (box-shadow : 0 3px 20px rgba(0,0,0,0.4))
+			- kasih padding supaya tidak terlalu mepet (padding : 40px)
+
+		* modifikasi button 
+			- besarkan tombol (width:45%)
+
+	6. Tambahkan icon di inputan Username (font awesome), caranya :
+		- tambahkan <div class="input-group"> di atas inputan username <input type="text">
+		- </div> pindahkan ke bawah inputan
+		- dibawah input-group, tambahkan icon
+			<div class="input-group-prepend">
+				<div class="input-group-text"><i class="fas fa-user"></i></div>
+			</div>
+
+	7. Tambahkan icon di inputan password (caranya sama dengan step 6)
+		<i class="fas fa-unlock-alt">
+
+
+-------------------------------------------------------------------------------------
+
+10. Membuat Tampilan Produk Toko Online (Manggunakan Card)
+
+* Menggunakan Card
+
+* Langkah2 :
+	
+	1. buat container, di dalamnya :
+
+	2. buat judul (h2) 'Produk Toko Online' -> tengahkan (text-center)
+
+	3. buat row, lalu (col-md-3) 4x
+
+	4. di search bootstrap, ketik card -> enter
+
+	5. copy script card lalu pastekan di col-md-3
+
+	6. Modifikasi Card
+		- hapus saja :  style="width: 18rem;" (di class card)
+		- Masukkan gambar di card
+		- ubah Tulisan2 nya (card-title dan card-text)
+		- tambahkan icon rating (bintang) dengan font awesome, caranya :
+			tambahkan dibawah .card-text
+			<p style="color:orange"> -> orange = warna bintang
+				<i class="fas fa-star"></i> -> bintang penuh
+				<i class="fas fa-star"></i>
+				<i class="fas fa-star"></i>
+				<i class="fas fa-star-half-alt"></i> -> bintang setengah
+				<i class="far fa-star"></i> -> bintang kosong
+			</p>
+		- Rapatkan Jarak Antar Tulisan, caranya :
+			* tambahkan class m-1 pada .card-title dan .card-text
+			* tambahkan class="m-1" pada p bintang
+		- Perbaiki button (jadi harga)
+			* ubah tulisan jadi harga
+		- tambah 1 button lagi untuk "Beli" di samping tombol harga
+
+	7. Buat Card Lainnya seperti card selanjutnya (copy)
+
+-------------------------------------------------------------------------------------
+
+11. Membuat Progress Bar
+
+* Di Search bootstrap -> ketik progress -> enter
+
+* Contoh Script Progress Bar :
+	<div class="progress" style="height: 45px">
+		<div class="progress-bar text-left p-3 bg-success progress-bar-striped progress-bar-animated" style="width:90%">
+			<h5>CSS 90%</h5>
+		</div>
+	</div>
+
+* keterangan class2 pada progress bar diatas :
+	- text-left (tulisan di sebelah kiri)
+	- p-3 (padding 3, sehingga tidak terlalu mepet)
+	- bg-success (warna progress bar hijau)
+	- progress-bar-striped (style progress bar garis2)
+	- progress-bar-animated (progress bar seakan berjalan)
+
+* class warna pada progress bar :
+	* bg-success
+	* bg-danger
+	* bg-info
+	* bg-warning
+	* bg-primary
+
+-------------------------------------------------------------------------------------
+
+12. Membuat tampilan website collapse
+
+* Tampilan Collapse (Jatuh) : Tampilan yang baru akan muncul setelah di klik
+
+* Di Search Bootstrap : ketik collapse -> enter
+
+* Contoh Penggunaan ada di 12-collapse.html
+
+-------------------------------------------------------------------------------------
+
+13. Membuat Pop Up (Modal)
+
+* Di Search Bootstrap : ketik modal -> enter
+
+* Contoh Penggunaan ada di 13-popUpModal.html
+
+-------------------------------------------------------------------------------------
+
+14. Membuat Layout Berita (Menggunakan Media Object)
+
+* Di Search Bootstrap : ketik media -> enter
+
+* Contoh Penggunaan ada di 14-mediaObject.html
+
+-------------------------------------------------------------------------------------
+
+15. Membuat Spinner (Efek Loading)
+
+* Di Search Bootstrap : ketik spinners -> enter
+
+* Contoh Penggunaan ada di 15-spinners.html
+
+-------------------------------------------------------------------------------------
+
+16. Membuat Shadow (Bayangan)
+
+* Di Search Bootstrap : ketik shadows -> enter
+
+* Contoh Penggunaan Shadow :
+	<div class="shadow-none p-3 mb-5 bg-light rounded">No shadow</div>
+	<div class="shadow-sm p-3 mb-5 bg-white rounded">Small shadow</div>
+	<div class="shadow p-3 mb-5 bg-white rounded">Regular shadow</div>
+	<div class="shadow-lg p-3 mb-5 bg-white rounded">Larger shadow</div>
+
+-------------------------------------------------------------------------------------
+
+17. Membuat Pagination
+
+* Di Search Bootstrap : ketik pagination -> enter
+
+* script pagination basic :
+	<nav aria-label="Page navigation example">
+	  <ul class="pagination">
+	    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+	    <li class="page-item"><a class="page-link" href="#">1</a></li>
+	    <li class="page-item"><a class="page-link" href="#">2</a></li>
+	    <li class="page-item"><a class="page-link" href="#">3</a></li>
+	    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+	  </ul>
+	</nav>
+
+------------------------------------------------------------------------------------
+
+18. Tooltip (Manampilkan Informasi dari Button)
+
+* Di search Bootstrap, ketik tooltip -> enter
+
+* contoh penggunaan tooltip sederhana pada button :
+	<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+	  Tooltip on top
+	</button>
+
+* posisi tooltip(data-placement) : top,bottom,left,right
+
+* untuk mempercantik tampilan tooltip, tambahkan script berikut :
+	<script>
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      });
+    </script>
+
+------------------------------------------------------------------------------------
+
+19. Popover (Hampir sama dengan tooltip)
+
+* Perbedaan Popover & Tooltip
+	- Tooltip menampilkan informasi pada button saat button di arahkan kursor
+	- Popover menampilkan informasi pada button saat button di klik
+
+* Di search Bootstrap, ketik popover -> enter
+
+* Contoh penggunaan popover pada button :
+	<button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-placement="right" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
+
+* Posisi popover : top,bottom,left,right
+
+* Buat script js sbb :
+	$(function () {
+	  $('[data-toggle="popover"]').popover()
+	});
+
+------------------------------------------------------------------------------------
+
+20. Membuat List Group
+
+* Di search Bootstrap, ketik list group -> enter
+
+* script list group basic :
+	<ul class="list-group">
+	  <li class="list-group-item">Cras justo odio</li>
+	  <li class="list-group-item">Dapibus ac facilisis in</li>
+	  <li class="list-group-item">Morbi leo risus</li>
+	  <li class="list-group-item">Porta ac consectetur ac</li>
+	  <li class="list-group-item">Vestibulum at eros</li>
+	</ul>
+
+* Selengkapnya di dokumentasi bootstrap
+
+------------------------------------------------------------------------------------
+
+21. Membuat table
+
+* Di search Bootstrap, ketik table -> enter
+
+* Script table basic :
+
+	<table class="table">
+	  <thead>
+	    <tr>
+	      <th scope="col">#</th>
+	      <th scope="col">First</th>
+	      <th scope="col">Last</th>
+	      <th scope="col">Handle</th>
+	    </tr>
+	  </thead>
+
+	  <tbody>
+	    <tr>
+	      <th scope="row">1</th> -> scope="row" biar tebal
+	      <td>Mark</td>
+	      <td>Otto</td>
+	      <td>@mdo</td>
+	    </tr>
+	  </tbody>
+	</table>
+
+* Selengkapnya di dokumentasi bootstrap
+
+------------------------------------------------------------------------------------
+
+22. Memasukkan Google Map dan Vidio Youtube (Embeds)
+
+* Di Search Bootstrap, ketik embeds -> enter
+
+* Langkah Memasukkan Peta Google Map
+	1. Di dalam container, buat class embed sbb :
+		<div class="embed-responsive" embed-responsive-16by9">
+			(tempat link google map)
+		</div>
+
+	2. Dapatkan link google map, caranya :
+		- buka google map, cari tempat yang ingin di tempelkan petanya
+		- klik bagikan
+		- klik tab sematkan peta
+		- salin link (salin HTML)
+		- pastekan di antara class embed-responsive (tempat link google map)
+
+
+* Langkah Memasukkan Vidio Youtube
+	1. Di dalam container, buat class embed sbb :
+		<div class="embed-responsive" embed-responsive-16by9">
+			(tempat link youtube)
+		</div> 
+
+	2. Dapatkan link vidio youtube, caranya :
+		- Buka vidio youtube yang diinginkan
+		- Klik Bagikan
+		- klik sematkan '<>'
+		- klik salin
+		- pastekan di antara class embed-responsive (tempat link youtube)
+
+* Rasio Embed dari yang terkecil sampe yang terbesar
+	- embed-responsive-21by9
+	- embed-responsive-16by9
+	- embed-responsive-4by3
+	- embed-responsive-1by1
+
+------------------------------------------------------------------------------------
+
+23 - Membuat Web Toko Online
+
+* LANGKAH-LANGKAH
+
+1. Membuat Navbar (Yang Ada Search Nya)
+	* Buat Navbar Seperti Di Materi 2
+		- Menu2 tidak mepet
+		- Navbar Fixed
+		- Background orange (warning)
+	* Tambahan :
+		- Buat Icon shop di samping Brand, caranya :
+			Masukkan script berikut di atas class "navbar-brand"
+			<h3><i class="fas fa-cart-plus text-success mr-2"></i></h3>
+		- Tebalkan tulisan Brand (font-weight-bold)
+		- ubah posisi menu (di ul) ke sebelah kanan (ganti mr-auto jadi ml-auto)
+		- beri margin pada menu(di ul) : (mr-4)
+		- Ganti Urutan Menu sbb :
+			Beranda | Reseller | Hubungi Kami | Bantuan
+		- Buat Icon2 disamping pencarian, caranya :
+			Masukkan script berikut di bawah </form> pencarian
+			<div class="icon mt-2">
+				<h5>
+					<i class="fas fa-cart-plus ml-3 mr-3"></i>
+					<i class="fas fa-envelope mr-3"></i>
+					<i class="fas fa-bell mr-3"></i>
+				</h5>
+			</div>
+
+
+2. Membuat Sidebar dan Carousel (sidebar)
+	* Buat class row
+	* Buat class col-md-2(untuk sidebar) dan col-md-10(untuk carousel)
+	
+	* Pada col-md-2 (Untuk Sidebar) :
+		- tambah class bg-light
+		- copy list group basic
+		- ganti nama-nama menu sidebar nya sbb :
+			- KATEGORI PRODUK -> ubah jadi bg-warning + tambahkan icon "fas fa-list"
+			- Kaos Kaki Pria -> tambahkan icon "fas fa-angle-right"
+			- Kaos Kaki Wanita -> tambahkan icon "fas fa-angle-right"
+			- Kaos Kaki Anak -> tambahkan icon "fas fa-angle-right"
+			- Kaos Kaki Bayi -> tambahkan icon "fas fa-angle-right"
+			- Kaos Kaki Warna Warni -> tambahkan icon "fas fa-angle-right"
+		- tambah class mt-5 pada row, supaya tidak terlalu mepet dengan navbar
+		- pada list-group(ul) tambahkan class p-2 dan pt-4 (supaya ada jarak)
+		- pada list-group(ul) tambahkan class list-group-flush untuk menghilangkan garis samping pada sidebar
+		- pada row, tambahkan class no-gutters (untuk menghilangkan jarak dan membuat element jadi full)
+	
+	* Pada col-md-10 (Untuk Carousel) :
+		- Pilih carousel with control -> paste disini
+		- Masukkan Gambar2 nya
+
+
+3. Membuat Tampilan Product
+	* Masih di dalam col-md-10
+
+	* buat judul <h4> Produk Terbaru -> tebal (font-weight-bold) -> mt-4
+
+	* Di Bawah h4, Buat row baru , lalu buat (col-md-3) 4x
+
+	* Masukkan card dari bootstrap ke col-md-3, edit card nya sesuai dengan materi 10 - membuat produk toko online
+
+	* Tambahan :
+		- Membuat Efek Hover saat produk di arahkan kursor (di css kita sendiri)
+			.row .card (box-shadow : 2px 2px 2px rgba(0,0,0,0.4))
+						(transform : scale(1.02))
+		- Tambah class bg-light di card-body
+		- Membuat modal ketika detail produk di klik, caranya :
+			* copy modal dari bootstrap (modal-lg) di modal-dialog (script js nya saja karena tombol nya sudah ada)
+			* di tombol detail, tambahkan property berikut
+				- data-target="#produk1" 
+				- data-toggle="modal"
+			* Edit Script Modal sbb :
+				- 'Modal Title' ubah jadi 'Detail Produk'
+				- Isi Bagian modal-body (2 colom - kiri dan kanan)
+				- di modal-body, buat class row
+				- lalu (col-md-6) 2x -> kiri gambar produk, kanan detail produk (dengan table-borderless)
+				- Isi Detail Produk antara lain :
+					* Nama Produk
+					* Tipe Produk
+					* Stok
+					* Rating Produk -> dengan bintang
+					* Harga
+				- Di Bagian bawah modal buat 2 tombol (kembali dan beli)
+
+
+4. Membuat Footer (52:19)
+	* Buat <footer> , di dalamnya row dan (col-md-3) 4x
+	* Di <footer> tambah class : bg-dark text-white p-5
+
+		* Di col-md-3 pertama (layanan pelanggan)
+			- buat :
+				<h5>LAYANAN PELANGGAN</h5>
+				<li>Pusat Bantuan</li>
+				<li>Cara Pembelian</li>
+				<li>Pengiriman</li>
+				<li>Cara Pengembalian</li>
+
+		* Di col-md-3 kedua (tentang kami)
+			- buat :
+				<h5>TENTANG KAMI</h5>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit.</p>
+
+		* Di col-md-3 ketiga (Mitra Kerjasama)
+			- buat :
+				<h5>MITRA KERJASAMA</h5>
+				<ul>
+					<li>GOJEK</li>
+					<li>GRAB</li>
+					<li>JNE</li>
+					<li>PT. POS Indonesia</li>
+					<li>TIKI</li>
+				</ul>
+
+		* Di col-md-3 keempat (Hubungi Kami)
+			- buat :
+				<h5>HUBUNGI KAMI</h5>
+				<ul>
+					<li>021-3943</li>
+					<li>customer@socks-collection.com</li>
+				</ul>
+
+	* Buat Copyright
+		<div class="copyright text-center text-white font-weight-bold bg-warning p-2">
+			<p>Developed by Socks-Collection Copyright <i class="far fa-copyright"></i> 2019</p>
+		</div>
+
+
+5. Tambahkan Tooltip pada icon2 di navbar
+	* Caranya ada di materi ke-18

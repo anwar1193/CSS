@@ -1,0 +1,31 @@
+* Box Model
+	- Bisa Dikasih Ukuran, warna, gambar background
+	- Box Model terdiri dari : 
+		* margin, padding, border dan content
+
+* Margin
+	- overlapping margin (menggabung 2 margin)
+		- atas bawah : kalo ada 2 margin yang saling ketemu, yang diambil margin yang terbesar
+		- kiri kanan : kalo ada 2 margin yang saling ketemu, maka ukuran margin dijumlahkan
+
+	- negatif margin (membuat margin yang belawanan arrah)
+
+	- auto (untuk margin kiri dan kanan), contoh :
+		div{margin-left:auto; margin-right:auto} -> maka div akan ke tengah
+	
+	- shorthand, contoh :
+		div{margin: 50px} 	:  semua sisi div margin nya jadi 50px
+		div{margin: 50px 100px} : atas bawah : 50, kiri kanan : 100px
+		div{margin: 30px 50px 40px} : atas : 30px, kiri kanan : 50px, bawah : 40px;
+		div{margin : 10px 20px 30px 40px} : atas, kanan, bawah, kiri
+
+* Padding
+	- contoh div{padding : 10px 20px 30px 40px} : atas, kanan, bawah, kiri
+	- padding tidak bisa diberi nilai negatif dan nilai auto
+	- padding menambah ukuran element/box
+
+* Border
+	- border : 1px solid black; (tebal, style, warna)
+	- style pada border : solid, dotted, dashed, double
+	- border menambah element/box
+	- div{box-sizing:border-box} -> ukuran width awal pada box tetap di pertahankan meskipun di tambah padding atau border

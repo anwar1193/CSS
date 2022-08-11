@@ -1,0 +1,25 @@
+.kotak {
+	width: 200px;
+	height: 100px;
+	background: linear-gradient(red,yellow,green);
+}
+
+.kotak:hover {
+	animation: animasi 2s forwards;
+}
+
+@keyframes animasi {
+	0% {
+		width: 200px;
+	}
+
+	50% {
+		width: 500px;
+		height: 100px;
+	}
+
+	100% {
+		width: 500px;
+		height: 500px;
+	}
+}

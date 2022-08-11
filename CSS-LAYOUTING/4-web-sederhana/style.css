@@ -1,0 +1,105 @@
+body{
+	background-image: url('bg.jpg');
+}
+
+.container{
+	width: 900px;
+	margin: auto;
+	margin-top: 20px;
+	background-color: white;
+	padding: 0px;
+	position: relative;
+}
+
+.header h1{
+	margin-left : 10px;
+	margin-top: 0;
+}
+
+.header .judul{
+	color: salmon;
+}
+
+.header .navigasi{
+	margin-left: -35px;
+}
+
+.header .navigasi li{
+	display: inline-block;
+	margin-right : 10px;
+	color: salmon;
+	padding: 10px;
+}
+
+.header .navigasi li:hover{
+	background-color: blue;
+	color: white;
+}
+
+.gambar{
+	height: 350px;
+	background-image: url('gambar.png');
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: 0 -60px;
+	border-top: 5px solid salmon;
+	border-bottom: 5px solid salmon;
+}
+
+.artikel{
+	padding : 20px;
+	width: 500px;
+	float: left;
+}
+
+.artikel .judul{
+	color: #615B5B;
+}
+
+.artikel .oleh{
+	color: #615B5B;
+	margin-top: -15px;
+}
+
+.artikel .oleh span{
+	color: salmon;
+}
+
+.sidebar{
+	width: 250px;
+	float: left;
+	margin-top: 20px;
+}
+
+.sidebar h3{
+	color: #615B5B;
+}
+
+.sidebar img{
+	width: 100px;
+	float: left;
+	margin-right: 5px;
+}
+
+.clear{
+	clear: left;
+}
+
+.twitter{
+	width: 200px;
+	height: 200px;
+	background-image: url('twitter.png');
+	display: inline-block;
+	position: absolute;
+	top: -22px;
+	left: 725px;
+
+}
+
+footer{
+	background-color: #858282;
+	padding: 20px;
+	font-weight: bold;
+	color: white;
+	text-align: center;
+}

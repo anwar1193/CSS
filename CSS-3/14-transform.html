@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Transform</title>
+	<style>
+		h2 {
+			text-align: center;
+		}
+
+		.kotakScale {
+			width: 100px;
+			height: 100px;
+			background-color: lightblue;
+			margin : 20px auto;
+			transition: 1s;
+		}
+
+		.kotakScale:hover {
+			/*transform: scale(1.5);*/ /* scale keseluruhan */
+			transform: scale(1.5 , 2); /* sumbu x 1.5 kali lipat, sumbu y 2 kali lipat */
+		}
+
+		.kotakRotate {
+			width: 100px;
+			height: 100px;
+			background-color: lightgreen;
+			margin : 20px auto;
+			transition: 1s;
+		}
+
+		.kotakRotate:hover {
+			transform: rotate(180deg);
+		}
+
+		.kotakSkew {
+			width: 100px;
+			height: 100px;
+			background-color: yellow;
+			margin : 20px auto;
+			transition: 1s;
+		}
+
+		.kotakSkew:hover {
+			transform: skew(30deg);
+		}
+
+		.kotakTranslate {
+			width: 100px;
+			height: 100px;
+			background-color: orange;
+			margin : 20px auto;
+			transition: 1s;
+		}
+
+		.kotakTranslate:hover {
+			transform: translate(50px,70px); /*ke kanan 50px, ke bawah 70px */
+		}
+
+
+
+
+	</style>
+</head>
+<body>
+	<h2>Klik Pada Kotak Untuk Liat Efek nya</h2>
+	<div class="kotakScale"></div>
+	<div class="kotakRotate"></div>
+	<div class="kotakSkew"></div>
+	<div class="kotakTranslate"></div>
+</body>
+</html>

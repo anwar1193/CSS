@@ -1,0 +1,116 @@
+<!-- 
+
+* float : mengatur posisi element (memaksa supaya ke kiri / ke kanan)
+
+* float Terbagi 3 :
+	- none	: default
+	- left	: kiri
+	- right	: kanan
+
+* contoh penggunaan float :
+	- text wrapping -> membuat text mengelilingi gambar/element lain
+	- immage gallery -> membuat serangkaian gambar menjadi gallery
+	- multi-column layout -> membuaat halaman menjadi beberapa kolom
+ 
+* membersihkan float (supaya element/container tidak terpengaruh float)
+	1. buat div kosong dengan kelas misalnya "clear",
+	2. di css, .clear : (left/right/both);
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Float</title>
+
+	<style>
+		.container{
+			width: 600px;
+			border: 1px solid black;
+			margin: auto;
+			padding: 5px;
+		}
+
+		img{
+			width: 200px;
+			float: left;
+			margin-right: 20px;
+		}
+
+		.kotak{
+			width: 80px;
+			height: 80px;
+			background-color: salmon;
+			color: white;
+			text-align: center;
+			line-height: 80px;
+			font-size: 30px;
+			margin : 2px;
+			float: left;
+		}
+
+		.col-kiri{
+			width: 300px;
+			height: 500px;
+			background-color: yellow;
+			float: left;
+			
+		}
+
+		.col-tengah{
+			width: 200px;
+			height: 500px;
+			background-color: green;
+			float: left;
+			
+		}
+
+		.col-kanan{
+			width: 100px;
+			height: 500px;
+			background-color: blue;
+			float: left;
+			
+		}
+		 
+		.clear{
+			clear: left;
+		}
+	</style>
+</head>
+<body>
+	
+<div class="container">
+	<h3>Contoh Float - Text Wrapping</h3>
+	<img src="4-web-sederhana/gambar.png"alt="">
+
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem officia omnis recusandae, explicabo nisi nam autem, impedit accusantium nihil illum ipsum iusto, velit perspiciatis excepturi assumenda quos magni hic itaque iste nemo animi laudantium. Officiis neque eum commodi repudiandae voluptatibus aut explicabo error sint perferendis cumque consequatur nihil, eos nesciunt doloribus facere provident natus pariatur blanditiis. Odio ex quo reiciendis corporis ipsa natus laborum placeat cum atque molestias accusantium fuga, voluptas incidunt nulla reprehenderit animi porro non. Deleniti obcaecati nemo itaque officia, minus minima necessitatibus ratione reprehenderit soluta sed, non omnis veniam tenetur quia veritatis. Officia inventore aliquid, debitis nobis modi voluptatem iure ducimus veritatis, ipsum, repellendus blanditiis aspernatur quas, nihil consectetur ad eius culpa provident vel illum quos fugit. Ratione maxime ad corrupti accusamus eaque, dolor tempora eum reprehenderit atque aliquam, dolorem vitae, mollitia deserunt quos a veritatis nihil optio consequuntur nam voluptatum facilis. Nostrum iusto ipsa officiis excepturi!</p>
+</div>
+
+<div class="container">
+	<h3>Contoh Float - Image Gallery</h3>
+	<div class="kotak">1</div>
+	<div class="kotak">2</div>
+	<div class="kotak">3</div>
+	<div class="kotak">4</div>
+	<div class="kotak">5</div>
+	<div class="kotak">6</div>
+	<div class="kotak">7</div>
+	<div class="kotak">8</div>
+	<div class="kotak">9</div>
+	<div class="kotak">10</div>
+	<div class="clear"></div>
+</div>
+
+<div class="container">
+	<h3>Contoh Float - Multiple Column Layout</h3>
+
+	<div class="col-kiri"></div>
+	<div class="col-tengah"></div>
+	<div class="col-kanan"></div>
+	<div class="clear"></div>
+
+</div>
+
+</body>
+</html>

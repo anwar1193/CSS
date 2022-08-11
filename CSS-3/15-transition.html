@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Transition</title>
+	<style>
+
+		.container {
+			width: 800px;
+			margin: 10px auto;
+			border: 1px solid black;
+		}
+		.kotak {
+			width: 100px;
+			height: 100px;
+			background-color: salmon;
+			text-align: center;
+			line-height: 100px;
+			font-size: 20px;
+		}
+
+		.kotak1 {
+			transition: 2s 1s; /* durasi, delay */
+		}
+
+		.kotak2 {
+			transition: all 2s ease-in 1s;  /* properti, durasi, fungsi, delay */
+		}
+
+		.kotak3 {
+			transition: 2s ease-out 1s; 
+		}
+
+		.kotak4 {
+			transition: 2s ease-in-out 1s; 
+		}
+
+		.kotak5 {
+			transition: 2s linear 1s; 
+		}
+
+		.kotak6 {
+			/*untuk transisi ini, ambil 4 nilai nya di inspect element*/
+			transition: 2s cubic-bezier(.95,.05,.8,.04);
+		}
+
+		.kotakKombinasi {
+			transition: margin-left 3s, transform 3s 2s, background-color 500ms 3s; 
+		}
+
+		.container:hover .kotak {
+			transform: rotate(360deg);
+			margin-left: 700px;
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+	<!-- container digunakan supaya pergerakan kotak lancar / tidak patah2 -->
+	<div class="container"> 
+		<div class="kotak kotak1">ease</div>
+		<div class="kotak kotak2">ease-in</div>
+		<div class="kotak kotak3">ease-out</div>
+		<div class="kotak kotak4">ease-in-out</div>
+		<div class="kotak kotak5">linear</div>
+		<div class="kotak kotak6">cubic-bezier</div>
+		<div class="kotak kotakKombinasi">kotakKomb</div>
+	</div>
+</body>
+</html>

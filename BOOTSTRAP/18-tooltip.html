@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="fileBootstrap/css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+
+    <title>Tooltip</title>
+  </head>
+  <body>
+    
+    <div class="container">
+      
+      <h3 class="text-center">Tooltip Pada Button</h3><br><br>
+
+      <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Tooltip on Top">
+        Tooltip on Top
+      </button>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="fileBootstrap/js/jquery-3.4.1.js"></script>
+    <script src="fileBootstrap/js/popper.js"></script>
+    <script src="fileBootstrap/js/bootstrap.min.js"></script>
+
+    <!-- script tooltip-->
+    <script>
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      });
+    </script>
+  </body>
+</html>

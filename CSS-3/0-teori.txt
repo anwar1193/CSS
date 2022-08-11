@@ -1,0 +1,573 @@
+1. CSS3 Intro
+
+* Kenapa menggunakan CSS3
+	- Membuat website menjadi lebih fleksibel
+	- Membuat mock-up dengan cepat tanpa bantuan bahasa scripting (ex. Javascript)
+	- Mengurangi penggunaan gambar = kecepatan load halaman
+	- Penggunaan selector untuk menghindari penggunaan markup yang boros
+
+* Dokumentasi property CSS3 : www.quackit.com/css/css3/properties
+
+* Property yang sering digunakan (dan akan dipelajari) :
+	* border-radius		* selector lanjut
+	* opacity			* webfont
+	* RGBa & HSLa		* media queries
+	* box-sizing		* transform (2D & 3D)
+	* box-shadow		* CSS transition
+	* text-shadow		* CSS Animation
+	* CSS gradient		* CSS Filter
+	* background		* Flexbox
+	* pseudo-element	* CSS columns
+
+-------------------------------------------------------------------------------------
+ 
+2. Border-Radius
+
+* Membuat sisi tumpul pada border
+
+* Contoh
+
+	di HTML :
+		<div class = "bulat">Isi Teks</div>
+	di CSS :
+		.bulat{
+			width : 200px;
+			height : 200px;
+			background-color : salmon;
+			border-radius : 100px;
+			text-align: center;
+			line-height: 200px;
+		}
+
+* Untuk membuat sudut tumpul (radius) di salah satu sisi, berikut perintahnya :
+	1. border-top-right-radius : ..px (sudut tumpul di kanan bawah)
+	2. border-bottom-right-radius : ..px (sudut tumpul di kanan atas)
+	3. border-top-left-radius : ..px (sudut tumpul di kiri atas)
+	3. border-bottom-left-radius : ..px (sudut tumpul di kiri bawah)
+
+* shorthand :
+	border-radius : 10px 10px 20px 20px; (atas kiri, atas kanan, bawah kanan, bawah kiri)
+
+-------------------------------------------------------------------------------------
+
+3. opacity (Transparansi)
+
+* contoh penulisan :
+	opacity : 0.4 -> nilai opacity antara 0-1
+
+-------------------------------------------------------------------------------------
+
+4. rgba & hsla
+
+* rgba : red green blue alpha(transparansi, 0-1)
+
+* contoh : 
+	background-color : rgba(255, 102, 0, 0.5);
+
+* Perbedaan rgba & opacity
+	- rgba memberi efek transparant pada warna (tidak mempengaruhi element child nya)
+	- opacity memberi efek transparant pada element (mempengaruhi element child nya)
+
+* hsla : hue(roda warna(angka)) saturation(0-100 %) lightness(kecerahan %) alpha(transparansi 0-1)
+
+-------------------------------------------------------------------------------------
+
+5-6. box-shadow
+
+* memberi bayangan pada element yang kita buat
+
+* Format penulisan :
+	box-shadow : <x-offset> <y-offset> <blur> <color> (4 properti wajib)
+	box-shadow : <x-offset> <y-offset> <blur> <spread> <color> (spread = tambahan)
+
+		<x-offset> : mengatur bayangan pada sumbu horizontal (px atau -px) kanan atau kiri
+		<y-offset> : mengatur bayangan pada sumbu vertikal (px atau -px) bawah atau atas
+		<blur> : blur pada bayangan (px)
+		<spread> : ukuran dari bayangan
+		<color> : warna (sebaiknya pake rgba supaya ada transparansi nya)
+
+* Contoh 1 : (tanpa spread)
+	box-shadow : 5px 5px 5px rgba(0,0,0, 0.75); -> bayangan hitam, transparansi 0.75
+
+* Contoh 2 : (dengan spread)
+	box-shadow : 5px 5px 5px 7px rgba(0,0,0, 0.75); -> bayangan hitam, transparansi 0.75
+
+(contoh lengkap ada di 5-box-shadow.html)
+
+-------------------------------------------------------------------------------------
+
+7. text-shadow
+
+* Untuk memberikan bayangan pada text
+
+* format penulisan :
+	text-shadow : <x-offset> <y-offset> <blur> <color>
+
+* contoh penulisan :
+	text-shadow : 5px 5px 10px green;
+
+-------------------------------------------------------------------------------------
+
+8. Linear Gradient
+
+* Gradient : teknik memberi warna gradasi pada element
+
+* linear-gradient : memberi warna gradient secara garis lurus
+
+* linear-gradient bukan property css3, melainkan value untuk background-image / background
+
+* format sederhana :
+	background : linear-gradient(warna awal , warna akhir);
+	contoh :
+		background : linear-gradient(red, white);
+
+* format banyak warna :
+	backgroud : linear-gradient(warna1, warna2, ...., warna-n);
+	contoh :
+		background : linear-gradient(red, yellow, green);
+
+* format menggunakan sudut :
+	background : linear-gradient(sudut , warna awal, warna akhir);
+	contoh :
+		background : linear-gradient(90deg, red, white); -> dari kiri ke kanan
+
+* format menggunakan arah : 
+	background : linear-gradient(arah , warna awal, warna akhir);
+	- contoh :
+		background : linear-gradient(to left, red, white);
+	- kumpulan keyword arah pada linear-gradient :
+		* to top 		* to left top
+		* to bottom 	* to left bottom
+		* to left 		* to right top
+		* to right 		* to right bottm
+
+* Color Stop (memberi bobot warna yang berbeda pada gradasi warna)
+	- contoh :
+		background : linear-gradient(red 65% , green);
+
+------------------------------------------------------------------------------------
+
+9. Radial Gradient
+
+* Gradasi warna secara melingkar
+
+* radial-gradient bukan property css3, melainkan value untuk background-image / background
+
+* format sederhana :
+	background : radial-gradient(warna awal , warna akhir);
+	contoh :
+		background : radial-gradient(red, white);
+
+* format banyak warna :
+	backgroud : radial-gradient(warna1, warna2, ...., warna-n);
+	contoh :
+		background : radial-gradient(red, yellow, green);
+
+* format lengkap :
+	background : radial-gradient(
+	tipe (ellipse,circle), -> default ellipse
+	jangkauan (closest-corner,closest-side,farthest-corner,farthest-side),  -> jarak dari pusat gradient ke sisi terluar nya
+	at posisi-y posisi-x, -> posisi pusat gradient
+	warna-1, warna-2,....,warna-n
+	);
+
+* contoh format lengkap :
+	background: radial-gradient(circle farthest-side at top left, red, blue);
+
+* keterangan jangkauan radial-gradient :
+	- closest-corner : jarak dari pusat gradient ke SUDUT TERDEKAT element
+	- closest-side : jarak dari pusat gradient ke SISI TERDEKAT element
+	- farthest-corner : jarak dari pusat gradient ke SUDUT TERJAUH element
+	- farthest-side : jarak dari pusat gradient ke SISI TERJAUH element
+
+* value2 pada posisi-y dan posisi-x :
+	- top 		* top-center 		* bottom-left
+	- center 	* top-left 			* bottom-center
+	- bottom 	* top-right 		* bottom-right
+	- left 		* center-center 	* ..px ..px
+	- center 	* center-left
+	- right 	* center-right
+
+* Color Stop (memberi bobot warna yang berbeda pada gradasi warna)
+	- contoh :
+		background : radial-gradient(red 60% , green 30%, blue 10%);
+
+-------------------------------------------------------------------------------------
+
+10. Font Face
+
+* Untuk mengelola font pada CSS3 (kalo di css biasa = font-family)
+
+* font harus ada di sistem operasi client/user
+
+* Referensi fonts : fonts.google.com , caranya
+	- klik tanda (+) di font pilihan kita
+	- copy kan link css ke web kita
+	- panggil font nya (font-family: namaFont);
+
+* Bagaimana jika google fonts tidak cukup?
+	kita gunakan @font-face
+
+* Cara Menggunakan @font-face :
+	- kunjungi : fontsquirrel.com
+	- klik download OTF/TTF/WOFF/dll (format terbaik untuk web = WOFF)
+	- extract hasil download - cari yang extension nya ttf/otf/woff - copy ke folder web kitae
+	- panggil font dengan sintax sbb : (di dalam style)
+
+		@font-face {
+			font-family: 'namaFont';
+			src: url(folder/'namaFile.ttf') format('truetype'); -> kalo woff format('woff')
+		}
+
+		h1 {
+			font-family : 'namaFont', arial;
+		}
+
+-------------------------------------------------------------------------------------
+
+11. Web Font Generator
+
+* advance dari font face
+
+-------------------------------------------------------------------------------------
+
+12. Vendor Prefix
+
+* teknik agar CSS3 yang digunakan kompatibel di semua browser
+
+* Definisi : sintaks khusus yang harus ditambahkan untuk beberapa property CSS3
+
+* sintaks spesifik untuk tiap browser/vendor (tiap browser berbeda sintaks nya)
+
+* Vendor Prefix antara lain :
+	* -webkit-<properti-css3> (Chrome, Safari, Opera versi terbaru)
+	* -moz-<properti-css3> (Firefox)
+	* -ms-<properti-css3> (Internet Explorer)
+	* -o-<properti-css3> (Opera Versi Terdahulu)
+
+* kenapa harus menambahkan vendor prefix?
+	karena tidak semua browser support CSS3
+
+
+* Contoh 1 (penggunaan filter pada img)
+	
+	img {
+		filter: grayscale(100%); -> mengubah gambar/foto jadi hitam putih
+	}
+
+	sintaks di atas akan jalan di firefox, tapi tidak jalan di chrome, supaya jalan maka sintaks nya harus kita ubah sbb :
+
+	img {
+		-webkit-filter: grayscale(100%);
+		filter: grayscale(100%);
+	}
+
+
+* Property CSS3 apa saja yang butuh vendor prefix?
+	info ada di : 
+	- shouldiprefix.com (model dikomentasi)
+	- caniuse.com (model ketik search, lalu muncul dokumentasi)
+	- pleeease.io/play (copy sintax, hasilkan sintax yang sudah ditambah prefix)
+	- emmet (klik tab setelah menulis sintax css3 sebelum titik dua (:))
+
+
+-------------------------------------------------------------------------------------
+
+13. Filter
+
+* Properti CSS3 yang digunakan untuk memberikan efek visual pada gambar, background atau border
+
+* format penulisan :
+	filter : <tipe-filter>;
+
+* Tipe Filter :
+	- blur (px) -> blur/kejelasan gambar
+	- brightness (angka | %) -> kecerahan gambar
+	- contrast (angka | %) -> kecerahan gambar
+	- saturate (angka | %) -> kejelasan warna (makin besar = warna makin jelas, makin kecil = warna makin hitam-putih)
+	- grayscale (angka | %) -> kejelasan warna (makin besar = warna makin hitam putih, makin kecil = warna makin jelas)
+	- sepia (angka | %) -> jadi warna sepia
+	- hue-rotate (deg) -> merubah warna (roda warna)
+	- invert (angka | %) -> efek negatif film
+	- opacity (angka | %) -> efek transparan
+	- drop-shadow (sama seperti box-shadow) -> mewakili box-shadow dan text-shadow
+
+-----------------------------------------------------------------------------------
+
+14. Transform
+
+* Properti transform memungkinkan kita dapat memanipulasi format visual dari elemen HTML
+
+* Transformasi ada 2 macam, 2D dan 3D
+
+* format penulisan :
+	transform : <fungsi>;
+
+* Fungsi transform antara lain :
+	- scale : memperbesar/memperkecil (angka kali lipat)
+	- rotate : memutar (deg)
+	- skew : membuat condong / miring (deg)
+	- translate : mengubah posisi (px)
+
+------------------------------------------------------------------------------------
+
+15. Transition
+
+* Properti transition memungkinkan kita dapat mengubah nilai dari properti HTML secara halus
+
+* transition vs animation
+
+* transition : ada 2 keadaan (keadaan awal dan akhir)
+
+* animation : ada lebih dari 2 keadaan yang disebut keyframe (keyframe1, keyframe2, ..., keyframe-n)
+
+* simpan selalu transition di keadaan awal
+
+* format penulisan :
+	wajib -> transition : <durasi>
+	lengkap -> transition : [property] <durasi> [fungsi] [delay];
+
+* contoh penulisan :
+	wajib -> transition : 1s
+	lengkap -> transition: all 2s ease-in 1s;  /* properti, durasi, fungsi, delay */
+
+* Keterangan value transition :
+	- durasi : s/ms (second/mili second) -> berapa lama durasi dari keadaan awal ke keadaan akhir
+	- property :  -> properti apa saja yang akan dilakukan transisi
+	- fungsi/timing function (value default = ease)
+	- delay -> waktu tunggu sebelum menjalankan transisi (s/ms)
+
+* properti css yang bisa di tambahkan efek transisi :
+	- background-color
+	- background-position
+	- background-size
+	- border
+	- color
+	- filter
+	- font-size
+	- line-height
+	- top left bottom right
+	- margin padding
+	- width height
+	- opacity
+	- transform
+	- word-spacing
+	- letter-spacing
+
+* fungsi/timing function antara lain :
+	- ease (default) 
+	- ease-in (pertama pelan, lalu cepat)
+	- ease-out
+	- ease-in-out
+	- linear
+	- cubic-bezier(w,x,y,z)
+
+* properti css yang tidak bisa di tambahkan efek transisi :
+	- font-family
+	- display
+	- position
+
+------------------------------------------------------------------------------------
+
+17-Animation
+
+* Berbeda dengan transition yang hanya menggunakan 2 keadaan (awal & akhir), animation bisa menggunakan banyak keadaan yang disebut 'keyframe'
+
+* Format Penulisan 2 keyframe :
+
+	@keyframes [nama] {
+		from {
+			[property-css]
+		}
+
+		to {
+			[property css]
+		}
+	}
+
+
+* Contoh penulisan 2 keyframes :
+
+	.kotak:hover { -> bisa juga dipanggil langsung saat di load (tidak harus hover)
+		animation: animasiKotak 2s; /* [nama animasi] [durasi] */
+	}
+
+	@keyframes animasiKotak {
+		from {
+			width: 200px;
+		}
+
+		to {
+			width: 500px;
+		}
+	}
+
+
+* Contoh penulisan lebih dari 2 keyframe :
+
+	.kotak:hover {
+		animation: animasiKotak 2s;
+	}
+
+	@keyframes animasiKotak {
+		0% {
+			width: 200px;
+		}
+
+		50% {
+			width: 500px;
+			height: 200px;
+		}
+
+		100% {
+			width: 500px;
+			height : 500px;
+		}
+	}
+
+
+* value pada animation :
+	animation : [name] [duration] [timing-function] [delay] [iteration-count]
+				[direction] [fill-mode] [play-state]
+
+			- iteration-count (angka | infinite(diulang terus menerus) )
+				contoh :
+					animation: animasiKotak 2s infinite; -> [name] [duration] [iteration-count]
+
+			- direction :
+				* normal (animasi jalan sesuai urutan keyframe)
+				* reverse (animasi jalan dari belakang / keyframe akhir ke awal)
+				* alternate (animasi jalan bolak-balik -> awal-akhir lalu akhir-awal dst)
+				* alternate-reverse (animasi jalan bolak balik) -> akhir-awal lalu awal-akhir dst
+				contoh :
+					animation: animasiKotak 2s infinite alternate; -> [name] [duration] [iteration-count] [direction]
+			
+			- fill-mode : untuk menentukan akhir dari transisi seperti apa
+				- none : default
+				- forwards : animasi akan berhenti di keadaan akhir
+				- backwards
+				- both
+				contoh :
+					animation: animasiKotak 2s 3 alternate forwards; -> [name] [duration] [iteration-count] [direction] [fill-mode]
+
+			- play-state
+				* running (default -> animasi jalan semestinya)
+				* paused (animasi akan berhenti) -> butuh bantuan javascript untuk menjalankannya
+
+------------------------------------------------------------------------------------
+
+18. Membuat Galeri Foto + Lighbox
+
+* Persiapan :
+	- Gambar Fullsize(600x800)px
+	- Gambar Thumbnail(120x120)px
+
+NB : Koding Lengkap ada di folder 18-galleryFoto
+
+* Langkah2 1 (Membuat Desain CSS) :
+	
+	1. Buat sebuah container, di dalamnya ada list (ul) gambar2 thumbnail nya sbb :
+		<ul class="gallery">
+			<li>
+				<a href="">
+					<img src="gambar.png">
+					<span>Judul Gambar</span>
+				</a>
+			<li>
+		</ul>
+
+	2. buat file css untuk reset lalu hubungkan, ada di folder css -> reset.css atau dari web nya : meyerweb.com/eric/tools/css/reset
+
+	3. Buat file css dan hubungkan, hal yang dilakukan di css kita sendiri
+
+		- Ubah Font Sesuai selera (Seperti materi - 10)
+
+		- Mengatur container sebagai tempat gambar2 :
+			.container {
+				width : 600px;
+				background-color: white;
+				margin: auto;
+				padding: 30px;
+				box-shadow: 0 0 3px 3px rgba(0,0,0,0.3);
+				border-radius : 50x;
+			}
+
+		- Kasih style untuk li (tempat gambar dan span(caption nya)) :
+			.gallery li {
+				width : 120px; -> lebar dan tinggi samakan dengan ukuran gambar supaya ngepas
+				height : 120px;
+				border-radius : 50%; -> supaya li jadi bulat
+				overflow : hidden; -> supaya gambar ikutan bulat
+				border : 50px solid #666; -> kasih border buat li
+				float: left; -> supaya gambar setelahnya ada di sampingnya
+			}
+
+		- bersihkan float nya, untuk merapi kan tampilan nya, caranya :
+			* Di HTML : tambahkan div baru, misal <div class="clear"></div> tepat di bawah <li> terakhir
+			* Di CSS : .clear { clear : both; }
+			* rapikan posisi gambar nya (margin-right : 10px)
+ 
+
+		- Buat efek saat gambar disorot, caption (span) tampil dengan efek
+			* Desain caption(span) nya :
+				.gallery li span {
+					display : block; -> supaya span bisa di atur ukurannya 
+					width : 120px; -> samakan dengan lebar gambar
+					height : 120px; -> samakan dengan tinggi gambar
+					background-color: rgba(200,200,200,0.5); -> warna transparan
+				}
+
+			* Matikan efek overflow di .gallery-li
+
+			* Buat gambar jadi bulat
+				.gallery li img {
+					border-radius : 50%;
+				}
+
+			* buat span jadi bulat juga, caranya :
+				di .gallery li span, tambahkan : border-radius: 50%;
+
+			* pindahkan span ke atas, caranya :
+				1. ubah posisi span jadi absolute (position:absolute)
+				2. masih di span, tambahkan -> top:0; ->supaya naik
+				3. ubah posisi li (parent nya span) jadi relative (position:relative)
+
+			* Ubah tulisan(text) span ke tengah, pada .gallery li span, tambahkan :
+				text-align : center;
+				line-height : 120px; -> sama dengan tinggi gambar
+
+			* ubah desain tulisan span sesuai selera
+
+			* di keadaan awal, buat span tidak terlihat caranya :
+				di .gallery li span, tambahkan :
+					opacity : 0; -> membuat seakan hilang (tansparansi 0)
+					transform : scale(0) rotate(0) -> ukuran seakan 0, rotasi 0
+
+			* setelah di sorot mouse, span baru terlihat, dan ada efeknya caranya :
+				.gallery li a:hover span{
+					cursor : pointer;
+					opacity : 1; -> span muncul
+					transform : scale(1) rotate(360deg) -> span membesar dan mutar
+				}
+
+			* Tambahkan transisi pada span, supaya efeknya lebih bagus :
+				di .gallery li span, tambahkan -> transition : 0.3s;
+
+
+	* Langkah 2 (Membuat Efek Light Box Ketika gambar di klik) :
+
+		4. Buat sebuah div baru, misal class 'overlay' (tempat fitur lightbox) (masih di li / paling bawah)
+
+		5. Desain overlay di css kita sendiri sbb :
+			.overlay {
+				position: fixed; -> supaya overlay tidak terganggu walau di scroll
+				top: 0; -> top,left,bottom,right = 0, supaya overlay full 1 halaman
+				left: 0;
+				bottom: 0;
+				right: 0;
+				background: rgba(0,0,0,0.8);
+				z-index: 9999; -> supaya overlay berada di dimensi paling depan
+			}
+			(ket : sampai sini overlay akan muncul dari awal/sebelum gambar di klik)
+
+		6. Membuat overlay baru muncul ketika gambar di klik (19 - 6:00)

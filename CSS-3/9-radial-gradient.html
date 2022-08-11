@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Radial Gradient</title>
+	<style>
+		div {
+			width: 300px;
+			height: 150px;
+			margin : 10px auto;
+		}
+
+		.rg-sederhana {
+			background: radial-gradient(red, yellow);
+		}
+
+		.rg-banyakWarna {
+			background: radial-gradient(red, green, blue);
+		}
+
+		.rg-colorStop {
+			background: radial-gradient(red 70%, yellow 30%);
+		}
+
+		.rg-formatLengkap {
+			background: radial-gradient(circle farthest-side at top left, red, blue);
+		}
+
+	</style>
+</head>
+<body>
+	<div class="rg-sederhana"></div>
+	<div class="rg-banyakWarna"></div>
+	<div class="rg-colorStop"></div>
+	<div class="rg-formatLengkap"></div>
+</body>
+</html>

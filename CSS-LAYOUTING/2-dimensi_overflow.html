@@ -1,0 +1,49 @@
+<!-- 
+
+* Dimensi CSS ada 2 : width, height
+* satuan width & height :
+	- px (pixel - nilai pasti)
+	- % (nilai relative/ukuran mengikuti induknya)
+	- in, cm, mm, pt, pc (ukuran spt di dunia nyata)
+
+* overflow (ada konten yang keluar), dibagi 4
+	- visible (default) 	: konten keluar (meluber)
+	- auto					: konten keluar akan dibuatkan scroll
+	- hidden				: Content yang keluar akan disembunyikan
+	- scroll				: akan ada scroll walaupun gak ada konten keluar
+
+ -->
+
+ <!-- Contoh Penerapan Display dan Overflow -->
+
+ <!DOCTYPE>
+ <html>
+ <head>
+ 	<title>Dimensi dan Overflow</title>
+ 	<style>
+ 		.contoh_dimensi{
+ 			width: 50%;
+ 			height: 100px;
+ 			background-color: yellow;
+ 		}
+
+ 		.contoh_overflow{
+ 			width: 50%;
+ 			height: 100px;
+ 			background-color: #59F393;
+ 			overflow: scroll;
+ 		}
+ 	</style>
+ </head>
+ <body>
+ 
+<div class="contoh_dimensi">
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, molestias. lorem</p>
+</div>
+
+<div class="contoh_overflow">
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam sit consequuntur minima ipsam incidunt tenetur, nobis animi dolorem voluptates expedita fugiat velit, consequatur officiis debitis ab rem facere, neque omnis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo rerum ut, voluptatem cumque beatae atque sapiente, explicabo architecto, iste, nemo ipsam ipsum perspiciatis. Quia alias repellendus cupiditate, hic mollitia quam!</p>
+</div>
+
+ </body>
+ </html>

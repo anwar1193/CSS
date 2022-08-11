@@ -1,0 +1,19 @@
+body {
+	background-color: #BDB6B6
+}
+h1 {
+	font-family: arial;
+}
+
+.p1 {
+	font-size: 20px;
+	font-weight: normal;
+	/*font-variant: small-caps;*/
+	font-style: italic;
+	color: white;
+	text-align: justify;
+	text-indent: 50px;
+	text-decoration: line-through;
+	text-transform: lowercase;
+	word-spacing: 50px;
+}

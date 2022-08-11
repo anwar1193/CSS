@@ -1,0 +1,37 @@
+/* CAROUSEL */
+
+.carousel-item {
+	height: 680px;
+}
+
+.carousel-item img {
+	margin-top: -140px;
+}
+
+.carousel-item hr {
+	width: 70px;
+	border-width: 3px;
+	border-color: orange;
+}
+
+.carousel-item .display-4{
+	margin-top: -470px;
+	color: yellow;
+	text-shadow: 5px 5px 5px rgba(0,0,0,0.7);
+}
+
+.carousel-item p{
+	color: yellow;
+	text-shadow: 5px 5px 5px rgba(0,0,0,1);
+}
+
+
+/* CARD */
+
+.card {
+	margin-top: 10px;
+}
+.row .card:hover {
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+	transform: scale(1.02);
+}

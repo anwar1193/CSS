@@ -1,0 +1,9 @@
+
+
+* z-index : 
+	- mengatur tumpukan pada position (relative,absolute,fixed)
+	- membuat element yang di beri z-index menjadi di depan element lain
+	- contoh : z-index : 1; (membuat maju 1 dimensi)
+	- kalo ada (z-index : 1) dan (z-index : 2), maka element yang di tambahkan
+		(z-index : 2) yang akan ada di depan
+

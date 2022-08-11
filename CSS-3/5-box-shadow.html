@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Box Shadow</title>
+	<style>
+		.box {
+			width: 200px;
+			height: 200px;
+			background-color: lightgreen;
+			box-shadow: 5px 5px 5px rgba(0,0,0, 0.75);
+			margin : 10px auto;
+		}
+
+		.box_spread {
+			width: 200px;
+			height: 200px;
+			background-color: orange;
+			margin : 20px auto;
+			box-shadow: 5px 5px 5px 5px rgba(0,0,0, 0.75);
+		}
+
+		.box_multi {
+			width: 200px;
+			height: 200px;
+			background-color: lightblue;
+			margin : 30px auto;
+			box-shadow: 0px 0px 0px 5px red,
+						0px 0px 0px 10px orange,
+						0px 0px 0px 15px green;
+			border-radius: 100px;
+		}
+
+		.box_gambar {
+			width: 200px;
+			height: 200px;
+			box-shadow: 0px 0px 2px 5px gray;
+			border-radius: 50%;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+
+	<div class="box_spread"></div>
+
+	<div class="box_multi"></div>
+
+	<center><img src="anwar.png" alt="" class="box_gambar"></center>
+</body>
+</html>

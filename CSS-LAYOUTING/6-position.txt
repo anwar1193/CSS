@@ -1,0 +1,16 @@
+ * Position, ada 4 :
+	- static	: posisi default sebuah element
+
+	- relative	: 
+	a. setiap ada perubahan pada element (misal posisi), tidak akan mempengaruhi element lain (maju 1 dimensi)
+	b. ruang yang ditempati element tersebut sebelumnya masih ada
+	c. bergerak terhadap posisi sebelumnya
+
+	- absolute
+	a. setiap ada perubahan pada element (misal posisi), tidak akan mempengaruhi element lain (maju 1 dimensi)
+	b. ruang yang ditempati element tersebut sebelumnya hilang
+	c. bergerak terhadap posisi parentnya (asal posisi parent nya relative)
+
+	- fixed
+	a. element tetap pada tempatnya walaupun di scroll
+	b. bergerak terhadap window (tidak memperdulikan element lainnya)

@@ -1,0 +1,14 @@
+body {
+	background-color: #DAFD7D;
+}
+.container {
+	width: 30%;
+	margin-top: 100px;
+	box-shadow: 0 3px 20px rgba(0,0,0,0.4);
+	padding: 40px;
+	background-color: white;
+}
+
+button {
+	width: 45%;
+}

@@ -1,0 +1,251 @@
+1. Pendahuluan
+
+* CSS (Cashcading Style Sheet)
+	- 1 file css bisa digunakan di lebih dari 1 file html
+
+-------------------------------------------------------------------------------------
+
+2. Anatomi CSS
+
+* anatomi css :
+	selector {property : value;} , contoh : h1{color : blue;}
+
+* selector : 
+	- Digunakan untuk memilih dan memanipulasi element spesifik pada html
+	- element html dipilih berdasarkan tag, id, class, bahkan pola / pattern
+
+* Dokumentasi property CSS :
+	- https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
+	- http://css-tricks.com/almanac
+
+-------------------------------------------------------------------------------------
+
+3. Penempatan CSS
+
+* Ada 3 cara penempatan css :
+	- Embed : di antara head html : <style></style>
+	- inline : langsung di tag html yang ingin di kasih style
+		contoh : <p style="color:lightblue;">Hallo</p>
+	- external
+
+-------------------------------------------------------------------------------------
+
+4. Font Styling
+
+* Property untuk font styling antara lain :
+
+	1. font-family : mengatur jenis font yang akan digunakan
+		- Value : arial, verdana, sans-serif, serif
+
+	2. font-size : mengatur ukuran font
+		- Value : px, %, em
+
+	3. font-weight : mengatur ketebalan font
+		- Value : lighter , normal , 100-900 , bold , border
+
+	4. font-variant : mengubah font menjadi small caps
+		- Value : normal , small-caps
+
+	5. font-style : mengubah font menjadi bercetak miring
+		- Value : normal , italic , oblique
+
+	6. line-height : mengatur spasi/jarak antar baris
+		- Value : normal, px, em
+
+-------------------------------------------------------------------------------------
+
+5. Text Styling
+
+* Property untuk text styling antara lain :
+	
+	1. color : memberi warna pada tulisan
+		- Value : nama warna , hexadecimal , rgb
+
+	2. text-align : mengatur format paragraf/teks
+		- Value : left, right, center, justify
+
+	3. text-indent : memberi indentasi pada paragraf / teks (alinea)
+		- Value : px , %
+
+	4. text decoration : mengatur dekorasi pada teks
+		- Value : none, underline (garis bawah), overline (garis atas), line-through (tulisan dicoret)
+
+	5. text-transform : mengubah jenis huruf menjadi huruf besar, kecil / kapital
+		- Value : none, lowercase (huruf kecil), uppercase(huruf besar), capitalize (huruf kapital)
+
+	6. letter-spacing : mengatur spasi antar huruf
+		- Value : normal, px
+
+	7. word-spacing : mengatur spasi antar kata
+		- Value : normal, px
+
+-------------------------------------------------------------------------------------
+
+6. Background
+
+* Property Pada Background :
+	1. background-color : mengatur warna pada background
+		- Value : warna (nama, hexadesimal, rgb)
+
+	2. background-image : mengatur gambar yang akan digunakan pada background
+		- Value : url('gambar.jpg');
+		- Referensi web gambar background : subtlepatterns.com
+
+	3. background-position : mengatur posisi gambar pada background
+		- Value :
+			* top, top left, top center, top right
+			* center, center left, center center, center right
+			* bottom, bottom left, bottom center, bottom right
+			* x% y%
+			* x-pos y-pos
+
+	4. background-repeat : mengatur jenis pengulangan gambar pada background
+		- Value :
+			* repeat-x (mengulang ke sumbu x)
+			* repeat-y (mengulang ke sumbu y)
+			* no-repeat (gambar tidak diulang)
+
+	5. background-size : mengatur ukuran background
+		- Value :
+			* cover (supaya ukuran background penuh)
+
+------------------------------------------------------------------------------------
+
+7. Selector
+
+* Digunakan pada css untuk mengenali sebuah elemen HTML yang akan diberi style
+
+* Macam2 Selector :
+	- elemen HTML
+	- id
+	- class
+	- complex selector
+
+* Separator koma (,) artinya 'dan' : untuk memberi style sama pada beberapa element
+	contoh :
+		h1, h2, p {
+			color : green;
+		}
+
+* Separator spasi, artinya 'di dalam'
+	contoh : (memberi warna pada a)
+		Di HTML
+			<ul>
+				<li><a href='#'>Link</a></li>
+				<li><a href='#'>Link</a></li>
+				<li><a href='#'>Link</a></li>
+			</ul> 
+
+		Di CSS
+			ul li a {
+				color : orange;
+			}
+
+
+* Beda id :
+	- Sebuah elemen HTML hanya boleh memiliki 1 id
+		contoh : <p id="merah"></p>
+	 	class boleh lebih dari 1 class, contoh <p class="merah tebal"></p>
+	- Setiap halaman hanya boleh memiliki 1 elemen dengan id tersebut
+	- Dapat digunakan sebagai penanda halaman untuk link
+	- Digunakan juga untuk javascript
+	- Sebaiknya tidak digunakan untuk CSS (CSS sebaiknya menggunakan class)
+
+------------------------------------------------------------------------------------
+
+8. Pseudo-class
+
+* Definisi : Kelas semu yang dimiliki oleh sebuah elemen HTML, yang membuat kita dapat mendefinisikan style pada 'KEADAAN TERTENTU' dari elemen tersebut
+
+* Pseudo-class yang berhubungan dengan link (a)
+	- :link (style default pada sebuah link (a href))
+	- :hover (style ketika mouse berada di atas sebuah link/elemen)
+	- :active (style ketika sebuah link di klik (keadaan aktif))
+	- :visited (style ketika sebuah link sudah pernah dikunjungi sebelumnya (menggunakan browser yang sama))
+
+
+* Pseudo-class yang berhubungan dengan posisi element(1)
+	- :first-child (memilih element pertama dari sebuat parent (element pembungkus))
+	- :last-child (memilih element terakhir dari sebuah parent)
+	- :nth-child(n) (memilih element ke-n dari sebuat parent), dimulai dari 1, bisa juga :nth-child(even/odd) -> genap/ganjil
+
+	Contoh
+		di HTML :
+			<ul>
+				<li><a href="">Link 1</a></li>
+				<li><a href="">Link 2</a></li>
+				<li><a href="">Link 3</a></li>
+			</ul>
+
+		di CSS :
+			li.first-child a {
+				color : green; -> mengubah warna list pertama
+			}
+
+			li.last-child a {
+				color : blue; -> mengubah warna list terakhir
+			}
+
+			li.nth-child(2) a {
+				color : red; -> mengubah warna list ke-2
+			}
+
+
+* Pseudo-class yang berhubungan dengan posisi element(2)
+	- :first-of-type (memilih element pertama dari sebuah jenis/tipe tag)
+	- :last-of-type (memilih element terakhir dari sebuah jenis/tipe tag)
+
+	Contoh :
+		di HTML :
+			<p>Paragraf 1</p>
+			<p>Paragraf 2</p>
+
+		di CSS :
+			p:first-of-type {
+				color : red; -> mengubah warna p pertama
+			}
+
+
+------------------------------------------------------------------------------------
+
+9. Inheritance (Pewarisan)
+
+* Definisi : sebuah element mewarisi beberapa nilai dari properti yang dimiliki oleh element parent-nya
+
+* Properti yang diwariskan :
+	- color 			- text-align
+	- font 				- text-indent
+	- letter-spacing 	- text-transform
+	- line-height 		- visibility
+	- list-style 		- white-space
+
+ * Contoh
+ 	di HTML :
+ 		<h1>Hello World</h1>
+ 		<a href="#">Halo</a>
+ 		<p>Selamat Datang</p>
+
+ 	di CSS :
+ 		body {
+ 			color : red;
+ 		}
+
+ 	hasilnya : h1 dan p warnanya berubah jadi merah, tapi a tidak (tetap default biru/warna bawaan link)
+
+ 	solusinya di CSS:
+ 		a {color : inherit;}
+
+
+------------------------------------------------------------------------------------
+
+10. Specificity
+
+* Definisi : Setiap deklarasi css (selector) memiliki berat yang berbeda. Berat tersebut menentukan seberapa spesifik sebuah elemen dapat dipilih oleh selector
+
+* Bobot Dari Setiap Selector :
+	- element : 1
+	- class : 10
+	- id : 100
+	- inline : 1000
+
+* Semakin besar/berat bobotnya, semakin spesifik selector nya

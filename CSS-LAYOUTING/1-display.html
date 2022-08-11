@@ -1,0 +1,46 @@
+<!-- 
+
+* <div> dan <span> : digunakan untuk mengelompokan tag2 HTML (tidak memiliki arti apapun)
+* <div> biasanya digunakan untuk mengelompokkan tag HTML
+* <span> biasanya digunakan untuk mengelompokkan text (hampir seperti <p>)
+* <div> default display nya blok -> div{display : block}
+* <span> default display nya inline -> span{display : inline}
+* setiap tag di HTML memiliki display default sendiri
+
+* display di css ada 4 :
+
+	- inline		: tidak menambahkan baris baru ketika dibuat (element2 nya sebaris/sejajar) tag html yang display default nya inline : (b, strong, i, em,  a, span, sub, sup, button, input, label, select, textarea) -> tidak dapat diatur tinggi dan lebar nya
+	 
+	- inline-block	: sama seperti inline (element2 nya sebaris/sejajar), bedanya kita bisa atur tinggi dan lebar nya
+	
+	- block			: menambahkan baris baru ketika dibuat. contoh tag html element block : (h1-h6, p, ol, ul, li, form, hr, div)
+	
+	- none			: untuk menghilangkan element html
+
+ -->
+
+
+ <!-- Contoh Penerapan Ubah Display Element : -->
+
+ <!DOCTYPE>
+ <html>
+ <head>
+ 	<title>Latihan Display</title>
+
+ 	<style>
+ 		.navigasi li{
+ 			display: inline;
+ 		}
+ 	</style>
+ </head>
+ <body>
+ 	<div class="navigasi">
+ 		<ul>
+ 			<li>Home</li>
+ 			<li>About US</li>
+ 			<li>Career</li>
+ 			<li>Contact</li>
+ 		</ul>
+ 	</div>
+ </body>
+ </html>
